@@ -1,0 +1,67 @@
+name: Compilar Release
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compilar:
+    name: Windows Forms - Release
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Preparar MSBuild
+        uses: microsoft/setup-msbuild@v3
+
+      - name: Restaurar y compilar
+        shell: pwsh
+        run: |
+          msbuild src/SistemaInventario.sln /restore /t:Rebuild /m /p:Configuration=Release /p:Platform="Any CPU"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Preparar ejecutable y dependencias
+        shell: pwsh
+        run: |
+          $origen = "src/SistemaInventario.Presentacion/bin/Release/net48"
+          $destino = Join-Path $env:RUNNER_TEMP "SistemaInventario-Release"
+          New-Item -ItemType Directory -Force -Path $destino | Out-Null
+          $archivos = @(
+            "SistemaInventario.Presentacion.exe",
+            "SistemaInventario.Presentacion.exe.config",
+            "SistemaInventario.Entidades.dll",
+            "SistemaInventario.AccesoDatos.dll",
+            "SistemaInventario.LogicaNegocio.dll"
+          )
+          foreach ($archivo in $archivos) {
+            if (!(Test-Path (Join-Path $origen $archivo))) {
+              throw "Falta el archivo compilado: $archivo"
+            }
+          }
+          Copy-Item "$origen/*.exe", "$origen/*.dll", "$origen/*.exe.config" -Destination $destino
+          @"
+          SistemaInventario - compilacion Release
+          Commit: ${{ github.sha }}
+          Requiere Windows, .NET Framework 4.8 y SQL Server.
+          Ejecuta database/schema.sql y database/datos.sql del repositorio.
+          Configura el servidor en SistemaInventario.Presentacion.exe.config.
+          Conserva las DLL y el archivo de configuracion junto al ejecutable.
+          "@ | Set-Content (Join-Path $destino "LEEME.txt") -Encoding utf8
+
+      - name: Publicar descarga Release
+        uses: actions/upload-artifact@v7
+        with:
+          name: SistemaInventario-Release
+          path: ${{ runner.temp }}/SistemaInventario-Release/
+          if-no-files-found: error
+          retention-days: 30
