@@ -1,0 +1,16 @@
+Ejecutable incluido en el ZIP original del sistema de inventario.
+No se recompilo ni se verifico su configuracion durante la organizacion.
+Ejecuta CompilarRelease.cmd para actualizarlo en Release desde el codigo actual.
+
+1. Ejecuta database/schema.sql y luego database/datos.sql en SQL Server.
+2. Ajusta el servidor en SistemaInventario.Presentacion.exe.config.
+3. Abre SistemaInventario.Presentacion.exe en Windows con .NET Framework 4.8.
+
+Conserva las tres DLL y la configuracion junto al ejecutable.
+Las cuentas iniciales creadas en la base son:
+admin / Admin123!
+usuario / Usuario123!
+
+Para editar y compilar abre ../src/SistemaInventario.sln en Visual Studio.
+CompilarRelease.cmd actualiza esta carpeta desde Developer Command Prompt.
+Las instrucciones completas estan en ../README.md.
