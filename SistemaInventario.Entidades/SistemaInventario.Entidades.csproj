@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>SistemaInventario.Entidades</RootNamespace>
+    <AssemblyName>SistemaInventario.Entidades</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+
+  </PropertyGroup>
+  <ItemGroup></ItemGroup>
+</Project>

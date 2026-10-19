@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+      <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <RootNamespace>SistemaInventario.Presentacion</RootNamespace>
+        <AssemblyName>SistemaInventario.Presentacion</AssemblyName>
+        <LangVersion>7.3</LangVersion>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <OutputType>WinExe</OutputType><UseWindowsForms>true</UseWindowsForms><StartupObject>SistemaInventario.Presentacion.Program</StartupObject>
+      </PropertyGroup>
+      <ItemGroup><ProjectReference Include="..\SistemaInventario.Entidades\SistemaInventario.Entidades.csproj" />
+<ProjectReference Include="..\SistemaInventario.LogicaNegocio\SistemaInventario.LogicaNegocio.csproj" /></ItemGroup>
+    <!-- formularios -->
+<ItemGroup>
+    <Compile Update="LoginForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="LoginForm.Designer.cs"><DependentUpon>LoginForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="LoginForm.resx"><DependentUpon>LoginForm.cs</DependentUpon></EmbeddedResource>
+    <Compile Update="PrincipalForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="PrincipalForm.Designer.cs"><DependentUpon>PrincipalForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="PrincipalForm.resx"><DependentUpon>PrincipalForm.cs</DependentUpon></EmbeddedResource>
+    <Compile Update="CategoriaForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="CategoriaForm.Designer.cs"><DependentUpon>CategoriaForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="CategoriaForm.resx"><DependentUpon>CategoriaForm.cs</DependentUpon></EmbeddedResource>
+    <Compile Update="SuplidorForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="SuplidorForm.Designer.cs"><DependentUpon>SuplidorForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="SuplidorForm.resx"><DependentUpon>SuplidorForm.cs</DependentUpon></EmbeddedResource>
+    <Compile Update="ProductoForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="ProductoForm.Designer.cs"><DependentUpon>ProductoForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="ProductoForm.resx"><DependentUpon>ProductoForm.cs</DependentUpon></EmbeddedResource>
+    <Compile Update="PapeleraForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="PapeleraForm.Designer.cs"><DependentUpon>PapeleraForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="PapeleraForm.resx"><DependentUpon>PapeleraForm.cs</DependentUpon></EmbeddedResource>
+</ItemGroup>
+</Project>

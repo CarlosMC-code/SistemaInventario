@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+      <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <RootNamespace>SistemaInventario.LogicaNegocio</RootNamespace>
+        <AssemblyName>SistemaInventario.LogicaNegocio</AssemblyName>
+        <LangVersion>7.3</LangVersion>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+
+      </PropertyGroup>
+      <ItemGroup><ProjectReference Include="..\SistemaInventario.Entidades\SistemaInventario.Entidades.csproj" />
+<ProjectReference Include="..\SistemaInventario.AccesoDatos\SistemaInventario.AccesoDatos.csproj" /><Reference Include="System.Drawing" /></ItemGroup>
+    </Project>

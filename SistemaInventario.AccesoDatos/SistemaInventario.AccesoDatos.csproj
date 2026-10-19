@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>SistemaInventario.AccesoDatos</RootNamespace>
+    <AssemblyName>SistemaInventario.AccesoDatos</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="..\SistemaInventario.Entidades\SistemaInventario.Entidades.csproj" /><Reference Include="System.Configuration" /></ItemGroup>
+</Project>
