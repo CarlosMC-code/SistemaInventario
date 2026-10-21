@@ -6,7 +6,7 @@
 
 ## ¿Para qué utilicé la IA?
 
-Durante el desarrollo del Sistema de Inventario utilicé ChatGPT como apoyo para organizar el proyecto, revisar código, resolver dudas y mejorar la entrega. La IA también ayudó a preparar y corregir partes del código y de la documentación.
+Durante el desarrollo del Sistema de Inventario utilicé ChatGPT como apoyo para organizar el proyecto, revisar código, resolver dudas y mejorar la entrega. La IA también ayudó a corregir errores del código y de la documentación, y para subirlo a GitHub.
 
 Los aportes principales fueron:
 
